@@ -1,27 +1,25 @@
 # todo-mini
+vue3 + vite + ts + sass
 
 项目使用[uni-app](https://zh.uniapp.dcloud.io/quickstart-cli.html)
 
 ## 项目开发记录
 
-### 一、初始化项目(特别提醒-Vue2.X的安装方法)
+### 一、初始化项目
 
 ```shell
-npx @vue/cli create -p dcloudio/uni-preset-vue todo-mini
+npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 ```
 > 使用 npx 可以不用全局先安装vue cli 工具，直接下载最新工程
 
-### 一、初始化项目(特别提醒-Vue3.X的安装方法)
+下载报错的解决方法：
 
 1. 打开链接https://github.com/dcloudio/uni-preset-vue
 2. 切换至`vite-ts`分支
-3. Download ZIP到本地解压缩
+3. Download ZIP 到本地解压缩
 4. npm i
 
-```shell
-npx @vue/cli create -p dcloudio/uni-preset-vue todo-mini
-```
-> 使用 npx 可以不用全局先安装vue cli 工具，直接下载最新工程
+
 
 ### 二、Sass支持
 

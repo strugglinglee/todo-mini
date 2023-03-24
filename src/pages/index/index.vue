@@ -9,15 +9,19 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const title = ref('Hello')
+  const title = ref('Hello')
 </script>
 
-<style>
+<style lang="scss">
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  text {
+    color: red;
+  }
 }
 
 .logo {
