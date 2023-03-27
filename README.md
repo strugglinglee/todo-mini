@@ -76,4 +76,6 @@ module.exports = {
 }
 ```
 
-husky
+### Husky
+
+lint-staged: 用于实现每次提交只检查本次提交所修改的文件。
