@@ -8,7 +8,7 @@ vue3 + vite + ts + sass
 ### 一、初始化项目
 
 ```shell
-npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
+npx degit dcloudio/uni-preset-vue#vite-ts your-vue3-project
 ```
 > 使用 npx 可以不用全局先安装vue cli 工具，直接下载最新工程
 
