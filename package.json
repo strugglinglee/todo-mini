@@ -2,6 +2,7 @@
   "name": "uni-preset-vue",
   "version": "0.0.0",
   "scripts": {
+    "dev": "node scripts/dev.js",
     "prepare": "husky install",
     "lint": "eslint src",
     "lint-staged": "lint-staged",
@@ -56,6 +57,8 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3070720230316001",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3070720230316001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3070720230316001",
+    "inquirer": "^8.0.0",
+    "shelljs": "^0.8.5",
     "vue": "^3.2.45",
     "vue-i18n": "^9.1.9"
   },

@@ -161,3 +161,57 @@ module.exports = {
   },
 }
 ```
+
+
+### 五、inquirer + shelljs 玩转命令行
+
+`inquirer` inquirer 是一个常用的交互式终端用户界面集合。 简单来说 inquirer 是可以让我们很方便的做各种终端交互行为的一个库
+
+`shelljs` node 中使用命令行的工具
+
+1. 下载依赖
+  
+```shell
+npm install inquirer@^8.0.0 shelljs -D
+```
+2. 创建脚本文件
+
+```js
+// script/dev.js
+const inquirer = require('inquirer')
+const shell = require('shelljs') // 执行文件操作
+const config = [
+  {
+    name: 'H5',
+    value: 'npm run dev:h5',
+  },
+  {
+    name: '微信小程序',
+    value: 'npm run dev:mp-weixin',
+  },
+  ...
+]
+
+inquirer
+  .prompt([
+    {
+      type: 'list',
+      name: 'buildScript',
+      message: '请选择你要编译的环境',
+      choices: config,
+    },
+  ])
+  .then((answers) => {
+    if (!answers.buildScript) return
+    shell.exec(answers.buildScript)
+  })
+```
+3. Package.json 加入命令
+
+```json
+"scripts": {
+    "dev": "node scripts/dev.js",
+}
+```
+
+4. 执行 `npm run dev` 即可进行环境选择编译
