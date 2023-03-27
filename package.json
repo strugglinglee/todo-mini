@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "node scripts/dev.js",
     "prepare": "husky install",
-    "lint": "eslint src",
+    "lint": "eslint --fix \"./src/**/*.{ts,js,vue}\"",
     "lint-staged": "lint-staged",
     "commitlint": "commitlint --config commitlint.config.js -e -V",
     "dev:app": "uni -p app",
