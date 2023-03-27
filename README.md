@@ -21,7 +21,7 @@ npx degit dcloudio/uni-preset-vue#vite-ts your-vue3-project
 
 
 
-### 二、Sass支持
+### 二、Sass 支持
 
 模板默认是没有支持Sass的。安装sass-loader与node-sass,需要指定版本，版本高了无法运行。
 node-sass下载太多坑了，改用sass（纯 node.js 实现的 sass 库）
@@ -31,3 +31,49 @@ node-sass下载太多坑了，改用sass（纯 node.js 实现的 sass 库）
 ```shell
 yarn add sass-loader sass --dev
 ```
+
+### 三、ESLint + Prettier
+
+```shell
+npm install eslint prettier --save-dev
+npm install eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue --save-dev
+npm install @typescript-eslint/eslint-plugin @typescript-eslint/parser --save-dev
+```
+
+1. 添加 .eslintrc.js
+2. 添加 .prettierrc.js
+
+```js
+// .eslintrc.js
+module.exports = {
+  parser: 'vue-eslint-parser',
+  extends: ['plugin:vue/recommended', 'plugin:prettier/recommended'],
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['vue', '@typescript-eslint'],
+  rules: {
+    'vue/multi-word-component-names': 'off',
+  },
+}
+```
+
+```js
+// .prettierrc.js
+module.exports = {
+  printWidth: 120,
+  tabWidth: 2,
+  tabs: false,
+  semi: false,
+  singleQuote: true,
+  quoteProps: 'as-needed',
+  bracketSpacing: true,
+  jsxBracketSameLine: false,
+  arrowParens: 'always',
+  endOfLine: 'auto',
+}
+```
+
+husky
