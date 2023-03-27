@@ -3062,6 +3062,13 @@
     "picocolors" "^1.0.0"
     "postcss-value-parser" "^4.2.0"
 
+"axios@^0.21.1":
+  "integrity" "sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg=="
+  "resolved" "https://registry.npmmirror.com/axios/-/axios-0.21.4.tgz"
+  "version" "0.21.4"
+  dependencies:
+    "follow-redirects" "^1.14.0"
+
 "babel-jest@^27.5.1":
   "integrity" "sha512-cdQ5dXjGRd0IBRATiQ4mZGlGlRE8kJpjPOixdNRdT+m3UcNqmYWN6rK6nvtXYfY3D76cb8s/O1Ss8ea24PIwcg=="
   "resolved" "https://registry.npmmirror.com/babel-jest/-/babel-jest-27.5.1.tgz"
@@ -3239,6 +3246,13 @@
   dependencies:
     "node-int64" "^0.4.0"
 
+"bson@^4.5.3":
+  "integrity" "sha512-Ry9wCtIZ5kGqkJoi6aD8KjxFZEx78guTQDnpXWiNthsxzrxAK/i8E6pCHAIZTbaEFWcOCvbecMukfK7XUvyLpQ=="
+  "resolved" "https://registry.npmmirror.com/bson/-/bson-4.7.2.tgz"
+  "version" "4.7.2"
+  dependencies:
+    "buffer" "^5.6.0"
+
 "buffer-equal@0.0.1":
   "integrity" "sha512-RgSV6InVQ9ODPdLWJ5UAqBqJBOg370Nz6ZQtRzpt6nUjc8v0St97uJ4PYC6NztqIScrAXafKM3mZPMygSe1ggA=="
   "resolved" "https://registry.npmmirror.com/buffer-equal/-/buffer-equal-0.0.1.tgz"
@@ -3249,7 +3263,7 @@
   "resolved" "https://registry.npmmirror.com/buffer-from/-/buffer-from-1.1.2.tgz"
   "version" "1.1.2"
 
-"buffer@^5.2.0":
+"buffer@^5.2.0", "buffer@^5.6.0":
   "integrity" "sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ=="
   "resolved" "https://registry.npmmirror.com/buffer/-/buffer-5.7.1.tgz"
   "version" "5.7.1"
@@ -3678,6 +3692,16 @@
     "abab" "^2.0.3"
     "whatwg-mimetype" "^2.3.0"
     "whatwg-url" "^8.0.0"
+
+"database-ql@^1.0.0-beta.2":
+  "integrity" "sha512-3q1ttPwaOdaOpG8BiKZOs6Jr8g9cxCM4hBbmFP1VOwijAcXNsbEj04dB6WJjX+THFxa3VFSxvReGC0TfHFxo5g=="
+  "resolved" "https://registry.npmmirror.com/database-ql/-/database-ql-1.0.0-beta.2.tgz"
+  "version" "1.0.0-beta.2"
+  dependencies:
+    "bson" "^4.5.3"
+    "lodash.clonedeep" "4.5.0"
+    "lodash.set" "4.3.2"
+    "lodash.unset" "4.5.2"
 
 "de-indent@^1.0.2":
   "integrity" "sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg=="
@@ -4287,6 +4311,11 @@
   "integrity" "sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ=="
   "resolved" "https://registry.npmmirror.com/flatted/-/flatted-3.2.7.tgz"
   "version" "3.2.7"
+
+"follow-redirects@^1.14.0":
+  "integrity" "sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA=="
+  "resolved" "https://registry.npmmirror.com/follow-redirects/-/follow-redirects-1.15.2.tgz"
+  "version" "1.15.2"
 
 "form-data@^3.0.0":
   "integrity" "sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg=="
@@ -5388,6 +5417,14 @@
   "resolved" "https://registry.npmmirror.com/klona/-/klona-2.0.6.tgz"
   "version" "2.0.6"
 
+"laf-client-sdk@^1.0.0-beta.2":
+  "integrity" "sha512-0Jbctghkw0D4/k+locZEBpkvHoFRHQ2ZQ60mBUKoz9fLxheK4ddTI71RFckB1aBKhFgSqfH6Hsdhxnl/MGEJWw=="
+  "resolved" "https://registry.npmmirror.com/laf-client-sdk/-/laf-client-sdk-1.0.0-beta.2.tgz"
+  "version" "1.0.0-beta.2"
+  dependencies:
+    "axios" "^0.21.1"
+    "database-ql" "^1.0.0-beta.2"
+
 "lcid@^3.0.0":
   "integrity" "sha512-M6T051+5QCGLBQb8id3hdvIW8+zeFV2FyBGFS9IEK5H9Wt4MueD4bW1eWikpHgZp+5xR3l5c8pZUkQsIA0BFZg=="
   "resolved" "https://registry.npmmirror.com/lcid/-/lcid-3.1.1.tgz"
@@ -5512,6 +5549,11 @@
   "resolved" "https://registry.npmmirror.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz"
   "version" "4.3.0"
 
+"lodash.clonedeep@4.5.0":
+  "integrity" "sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ=="
+  "resolved" "https://registry.npmmirror.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz"
+  "version" "4.5.0"
+
 "lodash.debounce@^4.0.8":
   "integrity" "sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow=="
   "resolved" "https://registry.npmmirror.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
@@ -5542,6 +5584,11 @@
   "resolved" "https://registry.npmmirror.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz"
   "version" "4.6.2"
 
+"lodash.set@4.3.2":
+  "integrity" "sha512-4hNPN5jlm/N/HLMCO43v8BXKq9Z7QdAGc/VGrRD61w8gN9g/6jF9A4L1pbUgBLCffi0w9VsXfTOij5x8iTyFvg=="
+  "resolved" "https://registry.npmmirror.com/lodash.set/-/lodash.set-4.3.2.tgz"
+  "version" "4.3.2"
+
 "lodash.snakecase@^4.1.1":
   "integrity" "sha512-QZ1d4xoBHYUeuouhEq3lk3Uq7ldgyFXGBhg04+oRLnIz8o9T65Eh+8YdroUwn846zchkA9yDsDl5CVVaV2nqYw=="
   "resolved" "https://registry.npmmirror.com/lodash.snakecase/-/lodash.snakecase-4.1.1.tgz"
@@ -5556,6 +5603,11 @@
   "integrity" "sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ=="
   "resolved" "https://registry.npmmirror.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   "version" "4.5.0"
+
+"lodash.unset@4.5.2":
+  "integrity" "sha512-bwKX88k2JhCV9D1vtE8+naDKlLiGrSmf8zi/Y9ivFHwbmRfA8RxS/aVJ+sIht2XOwqoNr4xUPUkGZpc1sHFEKg=="
+  "resolved" "https://registry.npmmirror.com/lodash.unset/-/lodash.unset-4.5.2.tgz"
+  "version" "4.5.2"
 
 "lodash.upperfirst@^4.3.1":
   "integrity" "sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg=="

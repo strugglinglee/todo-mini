@@ -58,6 +58,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3070720230316001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3070720230316001",
     "inquirer": "^8.0.0",
+    "laf-client-sdk": "^1.0.0-beta.2",
     "shelljs": "^0.8.5",
     "vue": "^3.2.45",
     "vue-i18n": "^9.1.9"

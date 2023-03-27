@@ -8,8 +8,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { register } from '@/utils/api'
 const title = ref('Hello')
+
+onMounted(async () => {
+  const res = await register('2', 'd')
+  console.log(res, 'hih')
+})
 </script>
 
 <style lang="scss">
