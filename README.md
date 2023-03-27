@@ -76,6 +76,88 @@ module.exports = {
 }
 ```
 
-### Husky
+### 四、Husky + lint-staged + commitlint
 
-lint-staged: 用于实现每次提交只检查本次提交所修改的文件。
+`husky`： 是一个 Git Hook 工具，借助 husky 我们可以在 git 提交的不同生命周期进行一些自动化操作
+`lint-staged`: 用于实现每次提交只检查本次提交所修改的文件
+`commitlint`: 提交时 commit 信息规范校验配置流程
+
+1. 下载依赖
+```shell
+npm i husky lint-staged @commitlint/cli @commitlint/config-conventional -D
+```
+
+2. package.json 文件中添加 scripts 
+
+```json
+"scripts": {
+    "prepare": "husky install",
+    "lint": "eslint src",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint --config commitlint.config.js -e -V"
+}
+```
+
+3. 执行 npm run prepare
+
+生成了.husky 文件夹
+
+4. 添加 pre-commit 钩子
+
+```shell
+npx husky add .husky/pre-commit "npm run lint-staged"
+```
+> 执行完根目录会自动生成一个 .husky/pre-commit  脚本
+
+5. 创建 .lintstagedrc 配置文件
+
+```json
+{
+    "src/**/*.{js,vue}": "npm run lint"
+}
+```
+
+6. 添加 commit-msg 钩子
+
+```shell
+npx husky add .husky/commit-msg "npm run commitlint"
+```
+
+7. 创建 commitlint.config.js 配置文件
+
+```js
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [
+      // type枚举
+      2,
+      'always',
+      [
+        'build', // 编译相关的修改，例如发布版本、对项目构建或者依赖的改动
+        'feat', // 新功能
+        'fix', // 修补bug
+        'docs', // 文档修改
+        'style', // 代码格式修改, 注意不是 css 修改
+        'refactor', // 重构
+        'perf', // 优化相关，比如提升性能、体验
+        'test', // 测试用例修改
+        'revert', // 代码回滚
+        'ci', // 持续集成修改
+        'config', // 配置修改
+        'chore', // 其他改动
+      ],
+    ],
+    'type-empty': [2, 'never'], // never: type不能为空; always: type必须为空
+    'type-case': [0, 'always', 'lower-case'], // type必须小写，upper-case大写，camel-case小驼峰，kebab-case短横线，pascal-case大驼峰，等等
+    'scope-empty': [0],
+    'scope-case': [0],
+    'subject-empty': [2, 'never'], // subject不能为空
+    'subject-case': [0],
+    'subject-full-stop': [0, 'never', '.'], // subject以.为结束标记
+    'header-max-length': [2, 'always', 72], // header最长72
+    'body-leading-blank': [0], // body换行
+    'footer-leading-blank': [0, 'always'], // footer以空行开头
+  },
+}
+```
