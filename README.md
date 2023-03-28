@@ -223,9 +223,13 @@ inquirer
 2. 将解压缩之后的dist包改名为vant放入在src下新建的wxcomponents文件夹下
 
 
+## 接入云开发
+
+接入[laf云开发](https://www.lafyun.com/)
+
+
 task:
 
 接入云开发
 CI
 文档整理
-接入组件库

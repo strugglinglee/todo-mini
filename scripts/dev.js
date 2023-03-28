@@ -2,12 +2,12 @@ const inquirer = require('inquirer')
 const shell = require('shelljs') // 执行文件操作
 const config = [
   {
-    name: 'H5',
-    value: 'npm run dev:h5',
-  },
-  {
     name: '微信小程序',
     value: 'npm run dev:mp-weixin',
+  },
+  {
+    name: 'H5',
+    value: 'npm run dev:h5',
   },
   {
     name: '支付宝小程序',
