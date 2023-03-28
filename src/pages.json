@@ -15,7 +15,13 @@
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "登录/注册"
+				"navigationBarTitleText": "登录注册"
+			}
+		},
+		{
+			"path": "pages/login/password",
+			"style": {
+				"navigationBarTitleText": "登录注册"
 			}
 		}
 	],
