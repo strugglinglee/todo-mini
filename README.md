@@ -216,7 +216,11 @@ inquirer
 
 4. 执行 `npm run dev` 即可进行环境选择编译
 
+### 六、vant-weapp组件库接入
 
+1. 进入[github:vant-weapp](https://github.com/youzan/vant-weapp)
+
+2. 将解压缩之后的dist包改名为vant放入在src下新建的wxcomponents文件夹下
 task:
 
 接入云开发

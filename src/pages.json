@@ -26,6 +26,11 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "野生记",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"usingComponents": {
+			"van-cell-group": "/wxcomponents/vant/cell-group/index",
+			"van-field": "/wxcomponents/vant/field/index",
+			"van-button": "/wxcomponents/vant/button/index"
+		}
 	}
 }

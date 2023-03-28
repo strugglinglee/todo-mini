@@ -1,5 +1,6 @@
 <template>
   <view class="content"> {{ title }} </view>
+  <van-button type="primary">主要按钮</van-button>
 </template>
 
 <script setup lang="ts">
