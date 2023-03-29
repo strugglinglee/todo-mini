@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { onMounted, reactive, ref, onBeforeMount } from 'vue'
-import cloud from '@/utils/api'
+import apiCloud from '@/utils/api'
 import { checkMobile } from '@/utils/index'
 
 let timer: any = null
@@ -39,7 +39,7 @@ const smsInfo = reactive<Record<string, any>>({
 })
 
 onMounted(() => {
-  console.log(cloud, 'hi')
+  console.log(apiCloud, 'hi')
 })
 
 onBeforeMount(() => {
@@ -73,7 +73,7 @@ const sendSms = async () => {
     }
     smsInfo.countdownSecond--
   }
-  const res = await cloud.invoke('send-login-sms', {
+  const res = await apiCloud('send-login-sms', {
     phone: form.phone,
   })
   console.log(res)

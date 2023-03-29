@@ -10,4 +10,11 @@ onHide(() => {
   console.log('App Hide')
 })
 </script>
+<script lang="ts">
+export default {
+  globalData: {
+    imgPrefix: 'https://oss.lafyun.com/4dwue6-data/wx/',
+  },
+}
+</script>
 <style></style>
