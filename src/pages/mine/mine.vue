@@ -1,17 +1,15 @@
 <template>
   <view class="mine">
     <view class="mine-top">
-      <image v-if="userInfo.avatarUrl" class="avatar" :src="userInfo.avatarUrl"></image>
-      <image v-else class="avatar" :src="imgPrefix + 'avatar_female.png'"></image>
+      <image v-if="userInfo.avatar" class="avatar" :src="userInfo.avatar"></image>
+      <image v-else class="avatar" :src="defaultAvatar"></image>
       <view v-if="isLogin" class="info">
-        <text class="info-top">{{ userInfo.nickName }}</text>
-        <text class="info-bottom"
-          >{{ userInfo.province }}
-          <text v-if="userInfo.city" class="city">,{{ userInfo.city }}</text>
-        </text>
+        <text class="info-top">{{ userInfo.username }}</text>
+        <text class="info-bottom">{{ userInfo.sign || '' }}</text>
+        <image class="edit" :src="imgPrefix + 'edit.png'" @click="toEdit"></image>
       </view>
       <view v-else>
-        <button class="user-button" open-type="getUserInfo" @click="onGotUserInfo">登录 / 注册</button>
+        <button class="user-button" @click="toLogin">登录 / 注册</button>
       </view>
     </view>
     <view v-for="item in JUMP_LIST" :key="item.type" class="mine-list">
@@ -31,7 +29,8 @@ import { onShow } from '@dcloudio/uni-app'
 import { reactive, ref } from 'vue'
 import { getWxUserInfo } from '@/utils/api/user'
 const userInfo = ref<Record<string, any>>({})
-const imgPrefix = reactive<any>(getApp().globalData?.imgPrefix)
+const imgPrefix = ref<any>(getApp().globalData?.imgPrefix)
+const defaultAvatar = ref<any>(getApp().globalData?.defaultAvatar)
 const isLogin = ref(false)
 // 8cbb19 515151
 
@@ -56,11 +55,19 @@ const JUMP_LIST: any = [
 onShow(async () => {
   const res = await getWxUserInfo()
   isLogin.value = !res.error
+  if (!isLogin.value) return
+  userInfo.value = res.data || {}
 })
 
-const onGotUserInfo = (e: any) => {}
+const toLogin = () => {
+  uni.navigateTo({ url: '/pages/login/wxLogin' })
+}
 
 const handleCmd = (type: string) => {}
+
+const toEdit = () => {
+  uni.navigateTo({ url: '/pages/mine/edit' })
+}
 </script>
 
 <style lang="scss">
@@ -77,8 +84,8 @@ const handleCmd = (type: string) => {}
     margin-top: 10rpx;
 
     .avatar {
-      width: 120rpx;
-      height: 120rpx;
+      width: 100rpx;
+      height: 100rpx;
       border-radius: 50%;
     }
 
@@ -134,13 +141,28 @@ const handleCmd = (type: string) => {}
   }
 
   .info {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 120rpx;
     margin-left: 16rpx;
+    position: relative;
+
+    .edit {
+      position: absolute;
+      right: 48rpx;
+      top: 38rpx;
+      width: 48rpx;
+      height: 48rpx;
+    }
 
     &-top {
+      width: 300rpx;
+      white-space: nowrap;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+      overflow: hidden;
       font-size: 28rpx;
       font-weight: bold;
     }

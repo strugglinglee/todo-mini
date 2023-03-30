@@ -13,6 +13,12 @@
       }
     },
     {
+      "path": "pages/mine/edit",
+      "style": {
+        "navigationBarTitleText": "编辑个人信息"
+      }
+    },
+    {
       "path": "pages/login/login",
       "style": {
         "navigationBarTitleText": "登录注册"

@@ -3,7 +3,7 @@
   type="{{ type }}"
   focus="{{ focus }}"
   cursor="{{ cursor }}"
-  value="{{ innerValue }}"
+  value="{{ value }}"
   auto-focus="{{ autoFocus }}"
   disabled="{{ disabled || readonly }}"
   maxlength="{{ maxlength }}"

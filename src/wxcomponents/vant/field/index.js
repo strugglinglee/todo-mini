@@ -52,14 +52,18 @@ VantComponent({
       value: false,
     },
   }),
+  observer: {
+    value(val) {
+      console.log(val)
+    },
+  },
   data: {
     focused: false,
-    innerValue: '',
     showClear: false,
   },
   created() {
     this.value = this.data.value
-    this.setData({ innerValue: this.value })
+    this.setData({ value: this.value })
   },
   methods: {
     onInput(event) {
@@ -85,7 +89,7 @@ VantComponent({
       this.$emit('click-input', event.detail)
     },
     onClear() {
-      this.setData({ innerValue: '' })
+      this.setData({ value: '' })
       this.value = ''
       this.setShowClear()
       nextTick(() => {
@@ -103,7 +107,7 @@ VantComponent({
       this.value = value
       this.setShowClear()
       if (value === '') {
-        this.setData({ innerValue: '' })
+        this.setData({ value: '' })
       }
       this.emitChange({ value })
     },
